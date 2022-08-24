@@ -19,7 +19,7 @@ const pify = require('pify');
 const yaml = require('js-yaml');
 
 const readFile = pify(fs.readFile);
-const PLUGNPLAY_FILE = 'plugnplay.yml';
+const PLUGIN_CONFIG_FILE = 'config.yml';
 
 /**
  * @classdesc
@@ -63,8 +63,8 @@ class PluginManager implements PluginManagerInterface {
   _globExpression(): string {
     const options = this.config.discovery;
     return options.allowsContributed
-      ? `${options.rootPath}/**/${PLUGNPLAY_FILE}`
-      : `${options.rootPath}/!(node_modules)/**/${PLUGNPLAY_FILE}`;
+      ? `${options.rootPath}/**/${PLUGIN_CONFIG_FILE}`
+      : `${options.rootPath}/!(node_modules)/**/${PLUGIN_CONFIG_FILE}`;
   }
 
   /**
