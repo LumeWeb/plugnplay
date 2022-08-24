@@ -43,7 +43,7 @@ class PluginManager implements PluginManagerInterface {
     const defaults: PluginManagerConfig = {
       discovery: {
         rootPath: '.',
-        allowsContributed: true,
+        allowsContributed: false,
       },
     };
     this.config = _.merge(defaults, config);
